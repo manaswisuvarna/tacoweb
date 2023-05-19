@@ -1,0 +1,50 @@
+.boxitem img {
+    height: 180px;
+    width: 300px;
+
+}
+
+.boxitem div {
+    /* background-color: aliceblue; */
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.boxitem {
+    margin: 0.5rem;
+    border: 1px solid black;
+    /* color: rgb(241, 238, 237); */
+    color: rgb(90, 8, 90);
+    background-color: white;
+    font-family: serif;
+    box-sizing: border-box;
+    width: 300px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.boxitem:hover {
+    box-shadow: 5px 5px 8px black;
+    transform: translateY(-10px);
+    transition: all ease 0.3s;
+
+}
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+button {
+    background-color: rgb(156, 210, 217);
+    padding: 5px 25px 5px 25px;
+    margin: 1rem;
+    border-radius: 8px;
+
+}
+
+button:hover {
+    font-size: larger;
+
+}

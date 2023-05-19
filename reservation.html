@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reservation</title>
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        .title {
+            background: linear-gradient(rgba(15, 23, 43, .7), rgba(15, 23, 43, .7)), url(img/taco13.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: rgb(213, 193, 113);
+            text-align: center;
+        }
+
+        .details input,
+        textarea,
+        select {
+            padding: 15px;
+            border-radius: 5px;
+            margin: 1rem;
+            width: 43.5%;
+            font-size: larger;
+        }
+
+        .btn {
+            width: 98%;
+            background-color: hsl(44, 78%, 47%);
+            border-radius: 5px;
+            font-size: x-large;
+            padding: 15px;
+            color: aliceblue;
+
+        }
+
+        .btn:active {
+            transform: translateY(-10px);
+            transition: all ease 0.3s;
+        }
+
+        option {
+            border-radius: 5px;
+        }
+
+        .back {
+
+            margin-left: 15px;
+            margin-right: 15px;
+            align-content: center;
+        }
+
+
+
+
+        .heading {
+            font-size: 45px;
+            margin-right: 25px;
+        }
+
+        .fa {
+            font-size: 25px;
+        }
+
+        .checked {
+            color: orange;
+        }
+
+        /* Three column layout */
+        .side {
+            float: left;
+            width: 15%;
+            margin-top: 10px;
+        }
+
+        .middle {
+            margin-top: 10px;
+            float: left;
+            width: 70%;
+        }
+
+        /* Place text to the right */
+        .right {
+            text-align: right;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* The bar container */
+        .bar-container {
+            width: 100%;
+            background-color: #c7c0c0;
+            text-align: center;
+            color: white;
+        }
+
+        /* Individual bars */
+        .bar-5 {
+            width: 70%;
+            height: 18px;
+            background-color: #04AA6D;
+        }
+
+        .bar-4 {
+            width: 50%;
+            height: 18px;
+            background-color: #2196F3;
+        }
+
+        .bar-3 {
+            width: 30%;
+            height: 18px;
+            background-color: #00bcd4;
+        }
+
+        .bar-2 {
+            width: 14%;
+            height: 18px;
+            background-color: #ff9800;
+        }
+
+        .bar-1 {
+            width: 25%;
+            height: 18px;
+            background-color: #f44336;
+        }
+
+        .rating {
+            background-color: rgb(240, 230, 209);
+            display: block;
+            margin-left: 15%;
+            margin-right: 15%;
+            padding: 30px;
+            font-family: cursive;
+        }
+
+        /* Responsive layout - make the columns stack on top of each other instead of next to each other */
+        /* @media (max-width: 400px) {
+
+            .side,
+            .middle {
+                width: 100%;
+            }
+
+            .right {
+                display: none;
+            }
+        } */
+
+
+
+        .containerbox {
+            border: 2px solid #ccc;
+            background-color: #eee;
+            border-radius: 5px;
+            padding: 16px;
+            margin: 16px 0
+        }
+
+        .containerbox::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .containerbox img {
+            float: left;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+
+        .containerbox span {
+            font-size: 20px;
+            margin-right: 15px;
+        }
+
+
+
+
+        /* testimonials */
+        .testitem {
+            background-color: white;
+            border: 1px solid black;
+            padding: 30px;
+            margin: 0.5rem;
+            border-radius: 7px;
+            width: 450px;
+            height: auto;
+            box-sizing: border-box;
+
+        }
+
+        .imgwithname {
+            display: flex;
+            margin-left: 0.5rem;
+        }
+
+        .imgwithname img {
+            border-radius: 100%;
+            width: 60px;
+            height: 60px;
+        }
+
+        .name {
+            font-size: 20px;
+            font-family: cursive;
+            margin: 1rem;
+
+        }
+
+        .qoutes {
+            margin-left: 0.5rem;
+            font-size: 30px;
+        }
+
+        .comment {
+            font-size: 18px;
+            margin: 1rem;
+
+        }
+
+        .testimonials {
+
+            display: flex;
+
+
+        }
+
+        .socialmedia {
+            background-color: #ecc3cc;
+            font-size: 20px;
+            border-radius: 100%;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+
+
+        <div class="navbar">
+            <a href="index.html" class="navitem">Home</a>
+            <a href="tacos.html" class="navitem">Tacos</a>
+            <a href="beer.html" class="navitem">Drink</a>
+            <a href="pizza.html" class="navitem">Pizza </a>
+            <a href="dessert.html" class="navitem">Desert</a>
+
+        </div>
+        <br><br>
+        <!-- online booking -->
+
+        <div class="back title" style=" background-color: rgb(0, 0, 0); padding: 50px;">
+            <div
+                style="font-size:30px;font-family: cursive; text-shadow: 1px 1px rgb(199, 158, 238);  color:rgb(240, 187, 12); font-weight: bolder; text-align: center;">
+                Reservation</div>
+
+            <h1 style="font-size: 50px;font-family: cursive; margin: 0px; color: aliceblue; text-align: center;"> Book A
+                Table Online</h1>
+
+            <form action="#">
+
+                <div class="details">
+
+                    <input type="text" placeholder="Your Name">
+
+                    <input type="email" placeholder="your email">
+
+                </div>
+
+
+
+                <div class="details">
+
+                    <input type="text" placeholder="Date&Time">
+
+
+                    <select class="form-select" id="select1" style="width : 46%;color: rgb(114, 111, 111); ">
+
+                        <option value="1">People 1</option>
+                        <option value="2">People 2</option>
+                        <option value="3">People 3</option>
+                    </select>
+
+
+                </div>
+
+                <div class="details">
+
+                    <textarea class="form-control" placeholder="Special Request" id="message"
+                        style="height: 80px ;width: 93%;"></textarea>
+                </div>
+
+                <div class="details btn1">
+                    <button class="btn" type="submit">Book Now</button>
+                </div>
+
+
+            </form>
+
+
+
+
+        </div>
+
+
+
+        <!-- <br><br> -->
+
+        <!-- <div class="ratcom">
+
+
+
+
+
+
+            comment -->
+        <!-- <br><br> -->
+
+
+        <!-- <div class="comments">
+
+                <h2>Responsive Testimonials</h2>
+                <p>Resize the browser window to see the effect.</p>
+
+                <div class="containerbox">
+                    <img src="img/9.jpg" alt="Avatar" style="width:90px">
+                    <p><span>Chris Fox.</span>
+                         CEO at Mighty Schools.</p>
+                    <p>John Doe saved us from a web disaster.</p>
+                </div>
+
+                <div class="containerbox">
+                    <img src="img/5.jpg" alt="Avatar" style="width:90px">
+                    <p><span>Rebecca Flex.</span> CEO at Company.</p>
+                    <p>No one is better than John Doe.</p>
+                </div>
+
+            </div> -->
+
+
+        <!-- </div> -->
+
+
+
+
+
+
+        <!--rating start-->
+        <br><br>
+
+        <div class="rating">
+
+            <span class="heading">User Rating</span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <p style="font-size: larger;">4.1 average based on 25400 reviews.</p>
+            <hr style="border:3px solid #f1f1f1">
+
+            <div class="row">
+                <div class="side">
+                    <div>5 star</div>
+                </div>
+                <div class="middle">
+                    <div class="bar-container">
+                        <div class="bar-5"></div>
+                    </div>
+                </div>
+                <div class="side right">
+                    <div>150</div>
+                </div>
+                <div class="side">
+                    <div>4 star</div>
+                </div>
+                <div class="middle">
+                    <div class="bar-container">
+                        <div class="bar-4"></div>
+                    </div>
+                </div>
+                <div class="side right">
+                    <div>63</div>
+                </div>
+                <div class="side">
+                    <div>3 star</div>
+                </div>
+                <div class="middle">
+                    <div class="bar-container">
+                        <div class="bar-3"></div>
+                    </div>
+                </div>
+                <div class="side right">
+                    <div>15</div>
+                </div>
+                <div class="side">
+                    <div>2 star</div>
+                </div>
+                <div class="middle">
+                    <div class="bar-container">
+                        <div class="bar-2"></div>
+                    </div>
+                </div>
+                <div class="side right">
+                    <div>6</div>
+                </div>
+                <div class="side">
+                    <div>1 star</div>
+                </div>
+                <div class="middle">
+                    <div class="bar-container">
+                        <div class="bar-1"></div>
+                    </div>
+                </div>
+                <div class="side right">
+                    <div>20</div>
+                </div>
+            </div>
+        </div>
+        <!-- rating end -->
+
+
+
+
+
+        <br><br>
+
+
+        <!-- testimonial -->
+        <h1
+            style="font-size: 40px; font-family: cursive; text-align: center ; color:rgb(240, 187, 12);; text-shadow:2px 2px rgb(24, 16, 31);;">
+            Testimonials!!</h1>
+
+        <marquee behavior="alternate" direction="left">
+            <div class="testimonials">
+
+
+
+                <div class="testitem" id="item1">
+
+                    <!-- qoutes -->
+
+                    <i class="fa fa-quote-left fa-2x text-primary mb-3 qoutes"></i>
+
+                    <p class="comment">
+                        Dolor amet sit justo amet elitr clita ipsum elitr est.
+                    </p>
+
+
+                    <div class="imgwithname">
+
+                        <img src="img/f1.png" alt="">
+                        <p class="name">Kerry <br> <span style="font-size: 15px;"> kerry@gmail.com </span></p>
+
+                    </div>
+
+                </div>
+
+                <div class="testitem" id="item2">
+
+                    <!-- qoutes -->
+
+                    <i class="fa fa-quote-left fa-2x text-primary mb-3 qoutes"></i>
+
+                    <p class="comment">
+                        Dolor amet sit justo amet elitr clita ipsum elitr est.
+                    </p>
+
+
+                    <div class="imgwithname">
+
+                        <img src="img/f2.png" alt="">
+                        <p class="name">John <br> <span style="font-size: 15px;"> john@gmail.com </span></p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="testitem" id="item3">
+
+                    <!-- qoutes -->
+
+                    <i class="fa fa-quote-left fa-2x text-primary mb-3 qoutes"></i>
+
+
+                    <p class="comment">
+                        Dolor sit amet consectetur ag elit. Iure, debitis.
+                    </p>
+
+                    <div class="imgwithname">
+
+                        <img src="img/f3.png" alt="">
+                        <p class="name">Rockey <br> <span style="font-size: 15px;"> rockey@gmail.com </span></p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="testitem" id="item4">
+
+
+
+                    <!-- qoutes -->
+
+                    <i class="fa fa-quote-left fa-2x text-primary mb-3 qoutes"></i>
+
+                    <p class="comment">
+                        Dolor amet sit justo amet elitr clita ipsum elitr est.
+                    </p>
+
+
+                    <div class="imgwithname">
+
+                        <img src="img/f4.png" alt="">
+                        <p class="name">Amrit <br> <span style="font-size: 15px;"> amrit@gmail.com </span></p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="testitem" id="item5">
+
+
+                    <!-- qoutes -->
+
+                    <i class="fa fa-quote-left fa-2x text-primary mb-3 qoutes"></i>
+
+                    <p class="comment" style="word-wrap: break-word;">
+                        Dolor amet sit justo amet elitr m elitr est.
+                    </p>
+
+
+                    <div class="imgwithname">
+
+                        <img src="img/f5.png" alt="">
+                        <p class="name">Rechea <br> <span style="font-size: 15px;"> rechea@gmail.com </span></p>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+
+        </marquee>
+
+    </div>
+
+
+
+
+    <footer>
+
+        <div class="footerdiv">
+            <div class="company">
+
+                <h2>Company</h2>
+
+                <ul type="none">
+                    <li><a href="index.html"> <span>></span> Home</a></li>
+                    <li><a href="tacos.html"> <span>></span> Tacos</a></li>
+                    <li><a href="beer.html"><span>></span> Drink</a></li>
+                    <li><a href="dessert.html"><span>></span> Dessert</a></li>
+                    <li><a href="reservation.html"><span>></span> Reservation</a></li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="contact">
+                <h2>Contact</h2>
+                <p><i class="fa fa-map-marker-alt me-3"></i> <span> 123 Street, Banglore,India</span></p>
+                <p><i class="fa fa-phone-alt me-3"></i><span> +123 456 53891</span></p>
+                <p><i class="fa fa-envelope me-3"></i><span> info@example.com</span></p>
+                <br>
+                <a class=" socialmedia " href="facebook.com"><i class="fab fa-facebook-f"></i></a>
+                <a class=" socialmedia" href="twitter.com"><i class="fab fa-twitter"></i></a>
+                <a class=" socialmedia" href="youtube.com"><i class="fab fa-youtube"></i></a>
+                <a class=" socialmedia" href="linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+
+            <div class="opening">
+                <h2>Opening</h2>
+                <p style="font-size: 20px;">Monday-Saturday</p>
+                <p>10:00AM-10:00PM</p>
+
+
+                <p style="font-size: 20px;">Sunday</p>
+                <p>10:00AM-8:00PM</p>
+
+            </div>
+
+
+
+            <div class="newsletter" style="width:300px">
+                <h2>Newsletter</h2>
+                <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit, quia? Ea
+                    sed adipisci ducimus enim quasi sequi harum possimus repellat?</p>
+
+            </div>
+        </div>
+
+
+        <hr>
+        <div class="bottom">
+            <p>© Your Site Name, All Right Reserved. Designed By HTML Codex</p>
+
+            <div class="bottomma">
+
+                <a href="index.html" class="bottoma">Home</a>
+                <a href="index.html" class="bottoma">Cookies</a>
+                <a href="index.html" class="bottoma">Help</a>
+
+                <a href="index.html" class="bottoma">FQAs</a>
+
+
+
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

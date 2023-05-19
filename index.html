@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="grid.css">
+</head>
+
+<style>
+    body {
+        background-image: linear-gradient(to right, #f93d66, #6d47d9);
+
+
+
+    }
+
+    .container {
+
+        display: grid;
+        padding: 40px;
+
+    }
+
+    .navbar {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+    }
+
+    .navitem {
+        background-color: rgb(236, 203, 37);
+        margin: 3px;
+        padding: 2px;
+        border: 2px solid black;
+        text-decoration: none;
+        font-size: x-large;
+        text-align: center;
+        font-weight: bold;
+        text-shadow: 2px 1px black;
+        box-shadow: 2px 2px 5px black;
+        color: purple;
+    }
+    .navitem:hover{
+        box-shadow: 5px 5px 8px rgb(18, 17, 17);
+        
+    }
+    .navitem:active{
+        transform: translateY(-10px);
+    transition: all ease 0.3s;
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        grid-template-areas: 'section  aside'
+            'section  aside2';
+
+    }
+
+    .section {
+
+        background-color: rgb(236, 203, 37);
+        padding: 40px;
+        border: 2px solid black;
+        text-shadow: 1px 1px rgb(234, 68, 68);
+        box-shadow: 2px 2px 5px black;
+    }
+
+
+    .box {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 2rem;
+
+    }
+
+
+    .itembox {
+        background-color: rgb(251, 249, 249);
+        padding-top: 20px;
+        text-align: center;
+        text-shadow: 1px 1px black;
+        border: 2px solid black;
+        display: grid;
+        grid-template-rows: auto;
+        grid-row-gap: 0.5rem;
+        box-shadow: 2px 2px 5px black;
+        margin-top: 25px;
+
+    }
+    .itembox:hover{
+        box-shadow: 8px 8px 10px rgb(18, 17, 17);
+        transform: translateY(-10px);
+    transition: all ease 0.3s;
+    }
+
+    a:hover,
+    a p:hover {
+        text-decoration: none;
+        /* text-shadow: 1px 1px rgb(199, 158, 238); */
+        /* transform: translateY(-10px);
+    transition: all ease 0.3s; */
+       
+    }
+
+    a:hover {
+        box-shadow: 2px 2px rgb(32, 2, 2);
+    }
+
+    .bigimg {
+
+        background-image: url(img/T5B.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        margin-top: 30px;
+        box-shadow: 2px 2px 5px black;
+
+
+        text-align: justify;
+
+    }
+
+
+    .linecontainer {
+           margin: 30px 30px;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            grid-gap: 1rem;
+
+        }
+
+        .line {
+           
+            background-image: linear-gradient(90deg, rgb(182, 158, 41), white);
+        }
+
+
+
+        .imgmaindiv {
+           
+           height: auto;
+            width: 95%;
+         display: flex;
+           
+        }
+
+        img {
+           
+           margin: 0.2rem;
+           width:450px;
+
+        }
+
+.learnmore{
+    padding:8px; text-shadow: 1px 1px black; background-color: rgb(239, 201, 11); color: rgb(52, 30, 86); font-size: 20px;
+}
+.learnmore:hover{
+    box-shadow: 2px 2px 5px black;
+    transform: translateY(-10px);
+    transition: all ease 0.3s;
+}
+img:hover{
+    transform: translateY(-10px);
+    transition: all ease 0.3s;
+}
+
+
+
+    @media (max-width:600px) {
+        body {
+            background-image: none;
+      background-color: black;
+        }
+        .container{
+            margin-right: 100px;
+        }
+        .navitem {
+            display: none;
+
+        }
+
+        #navitemid {
+            visibility: visible;
+            background-color: rgb(236, 203, 37);
+             display: flex;
+             justify-content: center;
+             margin: 20px;
+            padding: 3px;
+            border: 2px solid black;
+            text-decoration: none;
+            font-size: xxx-large;
+            text-align: center;
+            font-weight: bold;
+            text-shadow: 2px 1px black;
+            box-shadow: 2px 2px 5px black;
+
+
+        }
+
+        .main {
+            display: grid;
+            grid-template-areas: 'section section'
+                'aside aside2';
+            margin: 20px;
+
+        }
+
+        #sectionimg {
+            background-image: url(img/f3.png);
+            background-size: contain;
+            height: 250px;
+            margin-top: 30px;
+        }
+
+        .box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        /* .img{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        } */
+
+    }
+</style>
+
+<body>
+
+    <div class="container">
+
+        <!-- navigation bar -->
+        <div class="navbar">
+            <a href="tacos.html" class="navitem">Tacos</a>
+            <a href="beer.html" class="navitem">Drink</a>
+            <a href="pizza.html" class="navitem">Pizza </a>
+            <a href="dessert.html" class="navitem">Desert</a>
+            <a href="reservation.html" class="navitem">Reservations</a>
+        </div>
+
+        <div class="" style="visibility:hidden">
+            <a href="" class="" id="navitemid"> Menu</a>
+        </div>
+
+
+        <!-- section and aside... -->
+        <div class="main">
+
+            <div class="section " id="sectionimg"
+                style="grid-area: section; background-image: url(img/f2.png); background-repeat: no-repeat; background-size:100% 100%;  padding: 80px;">
+
+
+            </div>
+            <div class="section" style="grid-area: aside; text-align: center; ">
+
+                <span style="font-size: 50px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">$2.00
+                </span>
+
+                <span style="font-size:30px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Tacos</span>
+
+
+
+
+            </div>
+            <div class="section" style="grid-area: aside2; text-align: center; ">
+
+
+                <span style="font-size: 50px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">$3.00
+                </span>
+
+                <span style="font-size:30px ;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Drink</span>
+            </div>
+
+
+        </div>
+
+        <!-- boxes -->
+        <div class="box">
+
+
+            <div class="itembox" id="box1">
+                <a href="tacos.html" style="text-decoration: none; color: black;"> <span style="font-size:xx-large ;">🌮</span>
+                    <p style="font-size:x-large ;">Tacos</p>
+                    <p style="font-size:large ;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </a>
+
+            </div>
+            <div class="itembox" id="box2">
+                <a href="dessert.html" style="text-decoration: none; color: black;"> <span style="font-size:xx-large ;">🍨</span>
+                    <p style="font-size:x-large ;">Ice Cream</p>
+                    <p style="font-size:large ;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </a>
+
+
+
+            </div>
+            <div class="itembox" id="box3">
+                <a href="beer.html" style="text-decoration: none; color: black;"> <span style="font-size:xx-large ;">🍺</span>
+                    <p style="font-size:x-large ;">Drink</p>
+                    <p style="font-size:large ;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </a>
+
+
+
+            </div>
+            <div class="itembox" id="box4">
+                <a href="pizza.html" style="text-decoration: none; color: black;"> <span style="font-size:xx-large ;">🍕</span>
+                    <p style="font-size:x-large ;">Pizza</p>
+                    <p style="font-size:large ;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </a>
+
+            </div>
+
+            <!-- big image -->
+        </div>
+        <div class="bigimg" style="padding:150px 100px 150px 50px;">
+            <!-- <p style="font-size:40px ;color: aliceblue; display: inline-block; text-shadow: 1px 1px blanchedalmond;">
+                Featured Taco 🤤 </p> -->
+                <div style="font-size:40px; text-shadow: 1px 1px rgb(199, 158, 238); font-weight: bolder;">Featured Taco 🤤</div>
+            <br>
+            <span style="font-size:25px ;color:rgb(198, 190, 190); display: inline-block; font-weight: bolder; ">Slim Profile, easy to hold
+                andloaded with cheese.<span>
+                    <br>
+                    <span style="font-size:25px ;color: rgb(186, 175, 175) ;display: inline-block;font-weight: bolder; ">Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit.<span>
+                            <br>
+                            <br>
+                            <button class="learnmore">
+                                Learn More</button>
+
+        </div>
+                 <!-- imagesheading -->
+        <div class=" linecontainer">
+            <div class="line" style="background-image:linear-gradient(to left, rgb(245, 232, 167),rgba(255,0,0,0)) ;">
+            </div>
+            <div style="font-size:40px; text-shadow: 1px 1px rgb(199, 158, 238);">SOME IMAGES</div>
+            <div class="line" style="background-image:linear-gradient(to right,  rgb(245, 232, 167),rgba(255,0,0,0)) ;">
+            </div>
+        </div>
+
+
+
+        <div class="imgmaindiv" >
+
+           <div class="imdiv">
+           
+            <div class="img"> <img src="img/T1.jpg" alt=""></div>
+            <!-- <div class="img"> <img src="img/T2.jpg" alt=""></div> -->
+            <div class="img"> <img src="img/t12.jpg" alt=""></div>
+            <div class="img"> <img src="img/t10.jpg" alt=""></div>
+            <div class="img"> <img src="img/T2.jpg" alt=""></div>
+            <div class="img"> <img src="img/t6.jpg" alt=""></div>
+            <div class="img"> <img src="img/3.jpg" alt=""></div>
+            <div class="img"> <img src="img/t9.jpg" alt=""></div>
+            <div class="img"> <img src="img/2.jpg" alt=""height="290px"></div>
+          
+          </div>
+          <div class="imdiv">
+           
+           
+            
+           
+            <div class="img"> <img src="img/t11.jpg" alt=""></div>
+            <div class="img"> <img src="img/T4.jpg" alt=""></div>
+            <div class="img"> <img src="img/t14.jpg" alt=""></div>
+            <div class="img"> <img src="img/7.jpg" alt=""></div>
+            <div class="img"> <img src="img/t11.png" alt=""></div>
+            <div class="img"> <img src="img/t15.jpg" alt=""></div>
+            <div class="img"> <img src="img/T3.jpg" alt=""></div>
+            <div class="img"> <img src="img/5.jpg" alt=""></div>
+            <div class="img"> <img src="img/1.jpg" alt="" height="320px"></div>
+            <div class="img"> <img src="img/6.jpg" alt=""></div>
+            
+          </div>
+          <div class="imdiv">
+           
+            <div class="img"> <img src="img/t7.jpg" alt=""></div>
+            <div class="img"> <img src="img/8.jpg" alt=""></div>
+            <div class="img"> <img src="img/t8.jpg" alt=""height="325px"></div>
+            <div class="img"> <img src="img/t17.jpg" alt="" height="900px"></div>
+            <div class="img"> <img src="img/t13.jpg" alt=""></div>
+            <div class="img"> <img src="img/T2.jpg" alt="" ></div>
+            <div class="img"> <img src="img/t14.jpg" alt=""></div>
+          
+            
+            
+          </div>
+        </div>
+
+
+
+    </div>
+
+<footer>
+
+<div class="footerdiv">
+<div class="company">
+
+<h2>Company</h2>
+
+<ul type="none">
+<li><a href="index.html"> <span>></span> Home</a></li>
+<li><a href="tacos.html"> <span>></span> Tacos</a></li>
+<li><a href="beer.html"><span>></span> Drink</a></li>
+<li><a href="dessert.html"><span>></span> Dessert</a></li>
+<li><a href="reservation.html"><span>></span> Reservation</a></li>
+
+</ul>
+
+</div>
+
+
+<div class="contact">
+<h2>Contact</h2>
+    <p><i class="fa fa-map-marker-alt me-3"></i> <span> 123 Street, Banglore,India</span></p>
+    <p><i class="fa fa-phone-alt me-3"></i><span> +123 456 53891</span></p>
+    <p><i class="fa fa-envelope me-3"></i><span> info@example.com</span></p>
+ <br>
+ <a class="btn btn-outline-light btn-social" href="facebook.com"><i class="fab fa-facebook-f"></i></a>
+ <a class="btn btn-outline-light btn-social" href="twitter.com"><i class="fab fa-twitter"></i></a>
+ <a class="btn btn-outline-light btn-social" href="youtube.com"><i class="fab fa-youtube"></i></a>
+ <a class="btn btn-outline-light btn-social" href="linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+</div>
+
+<div class="opening">
+<h2>Opening</h2>
+ <p style="font-size: 20px;">Monday-Saturday</p>
+ <p>10:00AM-10:00PM</p>
+
+
+<p style="font-size: 20px;">Sunday</p>
+<p>10:00AM-8:00PM</p>
+
+</div>
+
+
+
+<div class="newsletter" style="width:300px">
+ <h2>Newsletter</h2>
+<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit, quia? Ea sed adipisci ducimus enim quasi sequi harum possimus repellat?</p>
+
+</div>
+</div>
+
+
+<hr>
+<div class="bottom">
+    <p>© Your Site Name, All Right Reserved. Designed By HTML Codex</p>
+
+<div class="bottomma">
+
+    <a href="index.html" class="bottoma">Home</a>
+    <a href="index.html" class="bottoma">Cookies</a>
+    <a href="index.html" class="bottoma">Help</a>
+    
+    <a href="index.html" class="bottoma">FQAs</a>
+
+
+
+</div>
+</div>
+    
+</footer>
+
+
+</body>
+
+</html>
